@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>WordCount</title>
+  </head>
+  <body>
+    <a href="{% url 'home' %}">Start again</a>
+
+    <h1>Entered Sentence: {{ fulltext }} </h1>
+    <h1>Total Words Count in Sentence : {{ count }} </h1>
+    <h2>Words and its Count: </h2>
+    {{ word_dictionary }}
+    <!--1st Method
+    {% for word,count in word_dictionary %}
+    {{ word }}
+    <br />
+    {{ count }}
+    <br />
+    {% endfor %}
+    -->
+
+  <!-- 2nd Method -->
+  {% for word,count in sortedwords %}
+  {{ word }} -- {{ count }}
+  <br />
+  {% endfor %}
+  </body>
+</html>
